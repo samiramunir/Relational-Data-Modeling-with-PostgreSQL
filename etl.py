@@ -14,13 +14,23 @@ def process_song_file(cur, filepath):
     song_data = (df.song_id.values[0], df.title.values[0],
              df.artist_id.values[0], int(df.year.values[0]),
              float(df.duration.values[0]))
-    cur.execute(song_table_insert, song_data)
+    try:
+        print('inserting_song_data')
+        cur.execute(song_table_insert, song_data)
+    except psycopg2.Error as e:
+        print("Error: Inserting Rows")
+        print (e)
 
     # insert artist record
     artist_data = (df.artist_id.values[0], df.artist_name.values[0],
                df.artist_location.values[0], df.artist_latitude.values[0],
                df.artist_longitude.values[0])
-    cur.execute(artist_table_insert, artist_data)
+    try:
+        print('inserting_artist_data')
+        cur.execute(artist_table_insert, artist_data)
+    except psycopg2.Error as e:
+        print("Error: Inserting Rows")
+        print (e)
 
 
 def process_log_file(cur, filepath):
@@ -44,7 +54,12 @@ def process_log_file(cur, filepath):
     time_df['weekday'] = df['ts'].dt.weekday
 
     for i, row in time_df.iterrows():
-        cur.execute(time_table_insert, list(row))
+        try:
+            print('inserting time data')
+            cur.execute(time_table_insert, list(row))
+        except psycopg2.Error as e:
+            print("Error: Inserting Rows")
+            print (e)
 
     # load user table
     user_df = pd.DataFrame()
@@ -56,7 +71,12 @@ def process_log_file(cur, filepath):
 
     # insert user records
     for i, row in user_df.iterrows():
-        cur.execute(user_table_insert, row)
+        try:
+            print('inserting user data')
+            cur.execute(user_table_insert, row)
+        except psycopg2.Error as e:
+            print("Error: Inserting Rows")
+            print (e)
 
     # insert songplay records
     for index, row in df.iterrows():
@@ -76,8 +96,12 @@ def process_log_file(cur, filepath):
                             artistid, row.sessionId,
                             row.location, row.userAgent)
 
-    cur.execute(songplay_table_insert, songplay_data)
-    cur.execute(songplay_table_insert, songplay_data)
+        try:
+            print('inserting songplay data')
+            cur.execute(songplay_table_insert, songplay_data)
+        except psycopg2.Error as e:
+            print("Error: Inserting Rows")
+            print (e)
 
 
 def process_data(cur, conn, filepath, func):
