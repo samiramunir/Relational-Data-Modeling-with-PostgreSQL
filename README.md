@@ -29,4 +29,5 @@ The database was designed in a star schema to allow query efficiency and to simp
 ### Requirements: 
 
 PostgreSQL : Setup instructions- https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb
+
 Psycopg2 - To connect to PostgreSQL - https://pynative.com/python-postgresql-tutorial/
