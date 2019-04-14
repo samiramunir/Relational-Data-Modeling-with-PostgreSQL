@@ -13,6 +13,8 @@ Sparkify is a startup music streaming app. The analytics team is interested in a
 
 **Schema:** The database was designed in a star schema to allow query efficiency and to simplify actions for busines users. 
 
+![star_schema](schema.png)
+
 ### The ETL pipeline: 
 
 > config.py: Script that holds user and password for connecting to the database 
