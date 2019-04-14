@@ -4,7 +4,6 @@ from sql_queries import create_table_queries, drop_table_queries
 config = {}
 exec(open('config.py').read(), config)
 user = config['user']
-user2 = config['user2']
 password = config['password']
 
 def create_database():
