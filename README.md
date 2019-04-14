@@ -11,11 +11,12 @@ Sparkify is a startup music streaming app. The analytics team is interested in a
 
 Project Goals: Build a database with tables designed to optimize queries on song play analysis.
 
-Project Description: 
 
 The database was designed in a star schema to allow query efficiency and to simplify actions for busines users. 
 
-The ETL pipeline: 
+### The ETL pipeline: 
+
+> config.py: Script that holds user and password for connecting to the database 
 
 > sql_queries.py : Holds query scripts for creating tables, inserting into tables and dropping tables. 
 
@@ -23,6 +24,9 @@ The ETL pipeline:
 
 > etl.py: Script to parse the log files and and extract data and populate the database with data. 
 
-> config.py: script that holds user and password for connecting to the database
-
 > test.ipynb: Run queries to test database integrity
+
+### Requirements: 
+
+PostgreSQL : Setup instructions- https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb
+Psycopg2 - To connect to PostgreSQL - https://pynative.com/python-postgresql-tutorial/
