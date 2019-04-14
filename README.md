@@ -4,15 +4,15 @@ Defined fact and dimension tables for a star schema for the purpose of user beha
 
 ### Introduction
 
-Sparkify is a startup music streaming app. The analytics team is interested in analyzing what kind of songs users are listening to and needs a data base designed to allow such analysis with easy queries.  The data they have resides in two directoreis: 
+Sparkify is a startup music streaming app. The analytics team is interested in analyzing what kind of songs users are listening to and needs a data base designed to allow such analysis with easy queries.  The data they have resides in two directories: 
 
 1. A directory of JSON logs on user activity on the app
 2. A directory with JSON metadata on the songs in their app
 
-Project Goals: Build a database with tables designed to optimize queries on song play analysis.
+**Project Goals**: Build a database with tables designed to optimize queries on song play analysis.
 
 
-The database was designed in a star schema to allow query efficiency and to simplify actions for busines users. 
+**Schema:** The database was designed in a star schema to allow query efficiency and to simplify actions for busines users. 
 
 ### The ETL pipeline: 
 
