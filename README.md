@@ -1,6 +1,5 @@
 # Relational-Data-Modeling-with-Postgres
-Defined fact and dimension tables for a star schema for the purpose of user behavior for a start up music streaming app, and wrote an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL
-
+Modeled a relational database for a startup music streaming app to analyze songs streaming trends. Defined fact and dimension tables for a star schema, wrote an ETL pipeline that transfers data from json files in two local directories using PostgreSQL and Python.  
 
 ### Introduction
 
