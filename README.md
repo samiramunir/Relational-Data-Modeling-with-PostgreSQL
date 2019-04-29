@@ -11,7 +11,7 @@ Sparkify is a startup music streaming app. The analytics team is interested in a
 **Project Goals**: Build a database with tables designed to optimize queries on song play analysis.
 
 
-**Schema:** The database was designed in a star schema to allow query efficiency and to simplify actions for busines users. 
+**Schema:** The database was designed in a star schema to allow query efficiency and to simplify actions for business users. 
 
 ![star_schema](schema.png)
 
