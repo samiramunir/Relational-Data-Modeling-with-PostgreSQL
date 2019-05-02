@@ -7,6 +7,16 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """ Function to extract song and artist data from json file and load them into data base.
+        Args: 
+            cur (obj)      : cursor object connected to the database.
+            filepath (str) : filepath of the json file.
+        Returns: 
+            None.
+        Raises: 
+            psycopg2.Error.
+            
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -34,6 +44,16 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """ Function to extract time, user and songplay data from usage log files and load them into data base.
+        Args: 
+            cur (obj)     : cursor object connected to the database.
+            filepath (str): filepath of the json file.
+        Returns: 
+            None.
+        Raises: 
+            psycopg2.Error.
+            
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -105,6 +125,16 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """ Function to list all matching files in a directory and iterate over files to process each file.
+        Args: 
+            cur (obj) : cursor object.
+            conn (obj): connection object.
+            filepath: filepath.
+            func: processing function to call on.
+        Returns: 
+            None
+            
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -129,6 +159,13 @@ user = config['user']
 password = config['password']
 
 def main():
+    """ Function to connect to database and creater cursof object and call on the functions process_data().
+    Args: 
+        None.  
+    Returns: 
+        None.
+        
+    """    
     conn = psycopg2.connect(f"host=127.0.0.1 dbname=sparkifydb user={user} password={password}")
     cur = conn.cursor()
 
