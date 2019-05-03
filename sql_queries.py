@@ -49,7 +49,7 @@ time_table_create = ("""
 
 # INSERT RECORDS
 
-songplay_table_insert = ("""INSERT INTO songplays (songplay_id, start_time,
+songplay_table_insert = ("""INSERT INTO songplays (songplay_id, start_time NOT NULL ,
                                                     user_id, level, song_id,
                                                     artist_id, session_id,
                                                     location, user_agent)
